@@ -7,23 +7,23 @@ const About = () => {
   const values = [
     {
       icon: Heart,
-      title: "Compassion First",
-      description: "Every action we take is rooted in compassion for all living beings.",
+      title: "Animal Welfare",
+      description: "Promoting the ethical treatment of all animals and supporting cruelty-free practices.",
     },
     {
       icon: Users,
-      title: "Community Impact",
-      description: "Building stronger communities through education and outreach programs.",
+      title: "Educational Outreach",
+      description: "Conducting lectures and activities in schools to raise awareness about veganism.",
     },
     {
       icon: Target,
-      title: "Focused Mission",
-      description: "Dedicated to ending animal cruelty through strategic initiatives.",
+      title: "Community Fundraising",
+      description: "Organizing events with local artists to support animal welfare organizations.",
     },
     {
       icon: Globe,
-      title: "Global Reach",
-      description: "Creating positive change that extends beyond local communities.",
+      title: "Vegan Advocacy",
+      description: "Providing guidance and support for individuals transitioning to plant-based living.",
     },
   ];
 
@@ -39,9 +39,10 @@ const About = () => {
               About <span className="text-primary">NOAC</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              The No Animal Cruelty Project is a passionate group of activists 
-              dedicated to promoting animal welfare and cruelty-free living through 
-              education, community outreach, and impactful fundraising initiatives.
+              The No Animal Cruelty Project is dedicated to promoting veganism and 
+              animal welfare through education, fundraising, and community outreach. 
+              We organize events, conduct school presentations, and create educational 
+              content to raise awareness about animal rights and cruelty-free living.
             </p>
           </div>
         </div>
@@ -56,14 +57,19 @@ const About = () => {
                 Our Mission
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                We believe in a world where all animals are treated with respect and compassion. 
-                Through our comprehensive approach combining education, advocacy, and community 
-                engagement, we work tirelessly to create lasting change.
+                We are committed to educating communities about the benefits of veganism 
+                and the importance of treating all animals with compassion and respect. 
+                Through our work, we aim to create a more conscious and caring world.
+              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                Our educational initiatives include conducting lectures and organizing 
+                community-driven activities in schools across the country to raise 
+                awareness about animal welfare and promote cruelty-free lifestyle choices.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Our initiatives span from school presentations that educate the next generation 
-                about animal welfare to large-scale fundraising events that support organizations 
-                aligned with our values. Every action we take is a step toward a more compassionate world.
+                We also organize fundraising events that bring together talented artists 
+                and community members to support organizations like Sri Surabhi Go Ksetra, 
+                which aligns with our values in protecting animals and supporting those in need.
               </p>
             </div>
             
@@ -85,11 +91,11 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-in">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Our Values
+              Our Core Focus Areas
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              These core principles guide everything we do and shape our approach 
-              to creating meaningful change in the world.
+              These key areas represent our commitment to creating meaningful change 
+              through education, advocacy, and community engagement.
             </p>
           </div>
 
