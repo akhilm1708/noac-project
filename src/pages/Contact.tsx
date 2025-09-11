@@ -7,19 +7,10 @@ import { Mail, Phone, Youtube, Instagram, MapPin, MessageCircle } from "lucide-r
 const Contact = () => {
   const contactMethods = [
     {
-      icon: Phone,
-      title: "Phone",
-      description: "Call us for direct communication",
-      value: "Phone number to be added",
-      action: "tel:",
-      bgColor: "bg-green-50",
-      iconColor: "text-green-600",
-    },
-    {
       icon: Mail,
       title: "Email",
       description: "Send us an email for inquiries",
-      value: "Contact email to be added",
+      value: "noacquestions@gmail.com",
       action: "mailto:",
       bgColor: "bg-blue-50",
       iconColor: "text-blue-600",
@@ -28,7 +19,7 @@ const Contact = () => {
       icon: Youtube,
       title: "YouTube",
       description: "Follow our video content",
-      value: "@noacproject",
+      value: "youtube.com/@noacproject",
       action: "https://www.youtube.com/@noacproject",
       bgColor: "bg-red-50",
       iconColor: "text-red-600",
@@ -37,8 +28,8 @@ const Contact = () => {
       icon: Instagram,
       title: "Instagram",
       description: "Connect with us on social media",
-      value: "Instagram handle to be added",
-      action: "#",
+      value: "@thenoacproject",
+      action: "https://www.instagram.com/thenoacproject",
       bgColor: "bg-purple-50",
       iconColor: "text-purple-600",
     },
@@ -53,11 +44,10 @@ const Contact = () => {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center animate-fade-in">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-              Contact <span className="text-primary">Us</span>
+              Contact <span className="text-primary">Us!</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              Get in touch with The NOAC Project. We'd love to hear from you 
-              and answer any questions about our mission and activities.
+              We look forward to connecting with you!
             </p>
           </div>
         </div>
@@ -101,14 +91,15 @@ const Contact = () => {
                     size="sm"
                     className="group/btn hover:bg-primary hover:text-primary-foreground"
                     asChild
-                    disabled={method.action === "tel:" || method.action === "mailto:" || method.action === "#"}
                   >
                     <a 
-                      href={method.action === "#" ? "#" : method.action + (method.action.includes("http") ? "" : method.value)}
+                      href={method.action === "mailto:" ? method.action + method.value : method.action}
                       target={method.action.includes("http") ? "_blank" : "_self"}
                       rel={method.action.includes("http") ? "noopener noreferrer" : ""}
                     >
-                      {method.title === "YouTube" ? "Visit Channel" : "Contact"}
+                      {method.title === "YouTube" ? "Visit Channel" : 
+                       method.title === "Instagram" ? "Follow Us" : 
+                       "Contact"}
                     </a>
                   </Button>
                 </CardHeader>
