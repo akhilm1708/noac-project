@@ -7,30 +7,191 @@
     <meta name="description" content="A group of animal activists promoting cruelty-free living through fundraising, education, and community outreach. Join our mission to protect animals and promote veganism." />
     <meta name="author" content="The NOAC Project" />
     <meta name="keywords" content="animal welfare, vegan advocacy, cruelty-free, fundraising, education, plant-based, animal rights" />
+    <link rel="icon" href="/public/favicon.ico" />
     
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="The NOAC Project - Animal Welfare & Vegan Advocacy" />
     <meta property="og:description" content="A group of animal activists promoting cruelty-free living through fundraising, education, and community outreach." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.thenoacproject.org" />
-    <!-- TODO: Add actual project image when available -->
     <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
 
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="The NOAC Project - Animal Welfare & Vegan Advocacy" />
     <meta name="twitter:description" content="A group of animal activists promoting cruelty-free living through fundraising, education, and community outreach." />
-    <!-- TODO: Add actual project image when available -->
     <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                DEFAULT: '#10b981',
+              },
+              background: '#0b1014',
+              foreground: '#0f172a'
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; }
+      .bg-gradient-hero { background: radial-gradient(1200px 600px at 50% -100px, rgba(16,185,129,0.15), transparent), linear-gradient(180deg, rgba(2,6,23,1) 0%, rgba(2,6,23,0.6) 100%); }
+      .hover-lift { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+      .hover-lift:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(0,0,0,0.15); }
+    </style>
   </head>
 
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+  <body class="bg-white text-slate-900">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur border-b border-slate-200">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
+        <a href="/index.html" class="flex items-center space-x-3">
+          <span class="w-9 h-9 rounded-full bg-emerald-600 text-white grid place-items-center font-semibold">N</span>
+          <span class="font-semibold">The NOAC Project</span>
+        </a>
+        <div class="hidden md:flex items-center space-x-6 text-sm">
+          <a href="/index.html" class="hover:text-emerald-700">Home</a>
+          <a href="/about.html" class="hover:text-emerald-700">About Us</a>
+          <a href="/videos.html" class="hover:text-emerald-700">Our Videos</a>
+          <a href="/events.html" class="hover:text-emerald-700">Annual Events</a>
+          <a href="/contact.html" class="hover:text-emerald-700">Contact</a>
+        </div>
+        <button id="menuBtn" class="md:hidden p-2 rounded hover:bg-slate-100" aria-label="Toggle menu">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+        </button>
+      </div>
+      <div id="mobileMenu" class="md:hidden hidden border-t border-slate-200 bg-white">
+        <div class="px-6 py-4 space-y-3 text-sm">
+          <a href="/index.html" class="block">Home</a>
+          <a href="/about.html" class="block">About Us</a>
+          <a href="/videos.html" class="block">Our Videos</a>
+          <a href="/events.html" class="block">Annual Events</a>
+          <a href="/contact.html" class="block">Contact</a>
+          <div class="pt-3 border-t">
+            <a href="https://www.youtube.com/@noacproject" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-red-600">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a4 4 0 0 0-2.8-2.8C18.9 3 12 3 12 3s-6.9 0-8.7.4A4 4 0 0 0 .5 6.2 41.2 41.2 0 0 0 0 12a41.2 41.2 0 0 0 .5 5.8 4 4 0 0 0 2.8 2.8C5.1 21 12 21 12 21s6.9 0 8.7-.4a4 4 0 0 0 2.8-2.8A41.2 41.2 0 0 0 24 12a41.2 41.2 0 0 0-.5-5.8zM9.8 15.5v-7l6 3.5-6 3.5z"/></svg>
+              YouTube
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="relative min-h-[85vh] grid place-items-center overflow-hidden">
+      <img src="/src/assets/hero-image.jpg" alt="Peaceful nature scene with animals in a protected environment" class="absolute inset-0 w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-gradient-to-r from-black/50 via-black/30 to-transparent"></div>
+      <div class="relative z-10 max-w-5xl mx-auto px-6 text-center text-white pt-24">
+        <p class="text-lg/7 opacity-90 mb-4">The No Animal Cruelty Project</p>
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-6">A group of <span class="text-emerald-400">animal activists</span></h1>
+        <p class="text-lg md:text-xl opacity-90 mb-10 max-w-2xl mx-auto">Promoting animal welfare and cruelty-free living through education, fundraising, and community outreach initiatives.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="#outreach" class="inline-flex items-center justify-center px-8 py-3 rounded-md bg-emerald-600 hover:bg-emerald-700 text-white font-semibold shadow">
+            Learn About Our Mission
+            <span class="ml-2">→</span>
+          </a>
+          <a href="https://www.youtube.com/@noacproject" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-8 py-3 rounded-md bg-white/10 border border-white/30 backdrop-blur hover:bg-white/20 text-white font-semibold">
+            <span class="mr-2">▶</span>
+            Watch Our Videos
+          </a>
+        </div>
+      </div>
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2">
+        <div class="w-6 h-10 border-2 border-white/60 rounded-full flex justify-center">
+          <div class="w-1 h-3 bg-white/60 rounded-full mt-2 animate-pulse"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Outreach Anchor -->
+    <section id="outreach" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 gap-10 items-center">
+          <div>
+            <h2 class="text-3xl font-bold mb-4">Education & Outreach</h2>
+            <p class="text-slate-600 leading-relaxed">We educate the community about animal welfare and plant-based living through events, videos, and local outreach efforts. Join us to make a compassionate impact.</p>
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="p-6 rounded-lg border hover-lift">
+              <div class="text-sm text-slate-500">Annual Events</div>
+              <div class="text-lg font-semibold">Fundraisers</div>
+            </div>
+            <div class="p-6 rounded-lg border hover-lift">
+              <div class="text-sm text-slate-500">Education</div>
+              <div class="text-lg font-semibold">Workshops</div>
+            </div>
+            <div class="p-6 rounded-lg border hover-lift">
+              <div class="text-sm text-slate-500">Content</div>
+              <div class="text-lg font-semibold">Videos</div>
+            </div>
+            <div class="p-6 rounded-lg border hover-lift">
+              <div class="text-sm text-slate-500">Community</div>
+              <div class="text-lg font-semibold">Outreach</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-50 border-t border-slate-200">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 py-12">
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="lg:col-span-2">
+            <div class="flex items-center space-x-3 mb-4">
+              <span class="w-9 h-9 rounded-full bg-emerald-600 text-white grid place-items-center font-semibold">N</span>
+              <span class="text-lg font-semibold">The NOAC Project</span>
+            </div>
+            <p class="text-slate-600 max-w-md">A group of animal activists promoting cruelty-free living through education, fundraising, and community outreach initiatives.</p>
+            <div class="flex items-center gap-4 mt-4">
+              <a href="https://www.youtube.com/@noacproject" target="_blank" rel="noopener noreferrer" class="text-red-600 hover:text-red-700" aria-label="YouTube">YouTube</a>
+              <a href="#" class="text-slate-600 hover:text-slate-800" aria-label="Instagram" title="Instagram link to be added">Instagram</a>
+              <a href="/contact.html" class="text-slate-600 hover:text-slate-800" aria-label="Contact">Contact</a>
+            </div>
+          </div>
+          <div>
+            <h3 class="font-semibold mb-3">Quick Links</h3>
+            <ul class="space-y-2 text-slate-600">
+              <li><a href="/index.html" class="hover:text-slate-900">Home</a></li>
+              <li><a href="/about.html" class="hover:text-slate-900">About Us</a></li>
+              <li><a href="/videos.html" class="hover:text-slate-900">Our Videos</a></li>
+              <li><a href="/events.html" class="hover:text-slate-900">Annual Events</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-semibold mb-3">Our Mission</h3>
+            <ul class="space-y-2 text-slate-600">
+              <li>Animal Welfare</li>
+              <li>Vegan Education</li>
+              <li>Community Outreach</li>
+              <li>Fundraising Events</li>
+            </ul>
+          </div>
+        </div>
+        <div class="pt-8 mt-8 border-t border-slate-200 text-sm text-slate-600 flex items-center justify-between">
+          <div>© <span id="year"></span> The NOAC Project. All rights reserved.</div>
+          <div>Made with <span class="text-red-500">❤</span> for animals</div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+      const btn = document.getElementById('menuBtn');
+      const menu = document.getElementById('mobileMenu');
+      btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+    </script>
   </body>
+  
 </html>
