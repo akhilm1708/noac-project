@@ -66,7 +66,7 @@ const Contact = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 max-w-4xl mx-auto">
             {contactMethods.map((method, index) => (
               <Card 
                 key={method.title} 
